@@ -139,7 +139,6 @@ examples/       → Real-world system example
 ## About the Author
 
 Khirawdhi Ray
-Senior Product Security Engineer focused on securing cloud-native and distributed systems at scale.
 
 ---
 
