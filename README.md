@@ -1,5 +1,11 @@
 # Secure Inference Architecture Blueprint
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Security Policy](https://img.shields.io/badge/Security-Policy-blue)
+![AI Security](https://img.shields.io/badge/Focus-AI%20Security-purple)
+![Architecture](https://img.shields.io/badge/Type-Architecture%20Blueprint-green)
+![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)
+
 **Secure the behavior, not just the model.**
 
 A practical security architecture blueprint for designing AI inference systems that hold under adversarial input, unsafe retrieval, tool abuse, and output leakage.
