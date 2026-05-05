@@ -1,23 +1,34 @@
-# Example: Customer Support RAG Assistant
+# Customer Support RAG Assistant — Architecture
 
-## System Purpose
-A customer support assistant answers user questions by retrieving internal support documents and generating responses using an LLM.
+## Overview
 
-## Data Flow
+AI assistant that:
+
+* Answers customer queries
+* Retrieves internal knowledge base
+* Executes actions (refunds, updates)
+
+---
+
+## Pipeline
 
 ```text
-Customer
-  ↓
-Web App
-  ↓
-Input Guard
-  ↓
-RAG Retriever
-  ↓
-Vector Database
-  ↓
-LLM Runtime
-  ↓
-Output Guard
-  ↓
-Customer Response
+User → Input Guard → RAG → LLM → Tool Execution → Output Guard → Response
+```
+
+---
+
+## Trust Boundaries
+
+* User → System
+* Retrieval → Model
+* Model → Tools
+* System → User
+
+---
+
+## Key Design Decisions
+
+* Separate retrieval from reasoning
+* Enforce strict tool execution controls
+* Apply output filtering before response
