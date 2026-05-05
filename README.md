@@ -69,6 +69,8 @@ Each stage is a **trust boundary**.
 
 Each boundary must enforce validation, authorization, and policy controls before data or actions move forward.
 
+![Secure AI Inference Architecture](architecture/diagrams/secure-ai-inference-architecture.png)
+
 ---
 
 ## Design Principles
