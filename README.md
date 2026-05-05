@@ -136,7 +136,6 @@ This repo shows how to:
 
 ## Author
 
-Khirawdhi Tanaya Ray
-Senior Product Security Engineer — Cloud & Distributed Systems
+Khirawdhi Ray
 
 ---
