@@ -71,6 +71,8 @@ Each boundary must enforce validation, authorization, and policy controls before
 
 ![Secure AI Inference Architecture](architecture/diagrams/secure-ai-inference-architecture.png)
 
+**Each stage represents a trust boundary where validation, authorization, and policy enforcement must occur.**
+
 ---
 
 ## Design Principles
