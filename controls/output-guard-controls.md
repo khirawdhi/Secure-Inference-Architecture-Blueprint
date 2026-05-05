@@ -1,16 +1,48 @@
 # Output Guard Controls
 
-## Goal
-Prevent sensitive, unsafe, or misleading content from reaching users.
+## Objective
+
+Prevent sensitive or harmful information from reaching users.
+
+---
+
+## Key Risks
+
+* Data leakage
+* Toxic or unsafe content
+* Policy violations
+
+---
 
 ## Controls
-- Filter secrets, PII, and internal data
-- Validate output against policy rules
-- Block unsafe instructions
-- Add citations or provenance where needed
-- Log blocked or modified outputs
 
-## Review Questions
-- Can sensitive data leak in responses?
-- Are outputs checked before user delivery?
-- Are blocked outputs logged for review?
+### 1. Output Filtering
+
+* Apply regex + classifier-based filters
+* Remove sensitive data patterns
+
+---
+
+### 2. Content Moderation
+
+* Use moderation APIs or classifiers
+* Block unsafe responses
+
+---
+
+### 3. Response Validation
+
+* Ensure output aligns with allowed formats
+* Reject unexpected outputs
+
+---
+
+### 4. Redaction
+
+* Mask sensitive fields (PII, credentials)
+
+---
+
+## Design Principle
+
+> Never expose raw model output directly to users.
