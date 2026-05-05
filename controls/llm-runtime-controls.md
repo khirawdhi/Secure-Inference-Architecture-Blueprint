@@ -1,16 +1,50 @@
 # LLM Runtime Controls
 
-## Goal
-Constrain model behavior during inference.
+## Objective
+
+Constrain model behavior and reduce unsafe or unpredictable outputs.
+
+---
+
+## Key Risks
+
+* Hallucination
+* Unsafe reasoning
+* Instruction override
+* Data leakage
+
+---
 
 ## Controls
-- Protect system prompts from exposure
-- Use structured prompts with clear boundaries
-- Apply policy checks before and after inference
-- Limit model access to sensitive context
-- Monitor high-risk outputs and refusals
 
-## Review Questions
-- Can the model reveal hidden instructions?
-- Is model behavior constrained by policy?
-- Are unsafe responses detected?
+### 1. System Prompt Protection
+
+* Store prompts securely
+* Prevent user override
+
+---
+
+### 2. Behavior Constraints
+
+* Use guardrails to restrict model actions
+* Define allowed response patterns
+
+---
+
+### 3. Output Token Limits
+
+* Prevent excessive output generation
+* Reduce data leakage risk
+
+---
+
+### 4. Monitoring & Logging
+
+* Log prompts, outputs, and decisions
+* Detect anomalous behavior patterns
+
+---
+
+## Design Principle
+
+> The model is not trusted. Its behavior must be constrained.
