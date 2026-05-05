@@ -12,7 +12,8 @@ This project treats AI inference as a **system**, not just a model call.
 
 Most AI security discussions focus on the model.
 
-In real systems, failures happen in:
+In real-world systems, failures rarely happen *inside* the model.
+They happen across the system:
 
 * Input handling
 * Retrieval pipelines (RAG)
@@ -20,7 +21,7 @@ In real systems, failures happen in:
 * Output generation
 * System integration
 
-This project focuses on securing the **entire inference pipeline**.
+This project focuses on securing the **entire inference pipeline** — where real risk exists.
 
 ---
 
@@ -60,7 +61,17 @@ Response
 
 Each stage is a **trust boundary**.
 
-Each boundary must enforce controls before data, prompts, or actions move forward.
+Each boundary must enforce validation, authorization, and policy controls before data or actions move forward.
+
+---
+
+## Design Principles
+
+* **Zero Trust** — no implicit trust between components
+* **Least Privilege** — restrict data and actions at every stage
+* **Explicit Control Points** — enforce controls at each boundary
+* **Constrained Execution** — the model suggests, the system decides
+* **Defense in Depth** — layered controls across the pipeline
 
 ---
 
@@ -69,9 +80,9 @@ Each boundary must enforce controls before data, prompts, or actions move forwar
 * Architecture blueprint for secure inference pipelines
 * Threat modeling approach (STRIDE adapted for AI systems)
 * Attack path mapping across inference layers
-* Security controls for each stage (input → output)
+* Layer-specific security controls (input → output)
 * Practical checklists for architecture reviews
-* Reusable templates for security teams
+* Reusable templates for product security teams
 
 ---
 
@@ -85,12 +96,20 @@ This blueprint aligns with:
 
 ---
 
-## Who this is for
+## Example Use Case
 
-* Product Security Engineers
-* Security Architects
-* AI Platform Engineers
-* Engineering teams building RAG / agent systems
+A customer support RAG assistant:
+
+* Retrieves internal documents
+* Uses LLM to generate responses
+* Executes actions (refunds, updates)
+
+This repo demonstrates how to:
+
+* Prevent prompt injection at input boundaries
+* Secure retrieval pipelines against data poisoning
+* Enforce authorization and validation on tool execution
+* Prevent sensitive data leakage in outputs
 
 ---
 
@@ -117,25 +136,12 @@ examples/       → Real-world system example
 
 ---
 
-## Example Use Case
-
-A customer support RAG assistant:
-
-* Retrieves internal documents
-* Uses LLM to generate responses
-* Executes actions (refunds, updates)
-
-This repo shows how to:
-
-* Prevent prompt injection
-* Secure retrieval pipelines
-* Control tool execution
-* Prevent data leakage in outputs
-
----
-
-## Author
+## About the Author
 
 Khirawdhi Ray
+Senior Product Security Engineer focused on securing cloud-native and distributed systems at scale.
 
 ---
+
+## License
+MIT
